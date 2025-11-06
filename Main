@@ -1,0 +1,28 @@
+public static void main(String[]args){
+    Graph myGraph = new Graph();
+    myGraph.addNode1("1");
+    myGraph.addNode2("2");
+    myGraph.addNode3("3");
+    myGraph.addNode4("4");
+    
+    myGraph.addEdge1("1","2", false);
+    myGraph.addEdge2("1","4",false);
+    myGraph.addEdge3("1","5",false);
+    myGraph.addEdge4("2","3",false);
+    myGraph.addEdge5("4","2",false);
+    myGraph.addEdge6("4","5",false);
+    
+    int[] subsetGraph = {1,2,4};
+    
+    System.out.println("Graph:");
+    myGraph.println();
+    System.out.println("/n");
+    System.out.println("Edges:");
+    System.out.println(myGraph.addEdge2() + myGraph.getEdge5() + myGraph.addEdge6());
+    System.out.println("/n");
+    System.out.println("Subgraph");
+    System.out.println(subsetGraph);
+
+
+
+}
