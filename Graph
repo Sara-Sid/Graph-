@@ -1,46 +1,46 @@
-import java.util.Arrays;
-
 class Graph{
-  int n;
-  int[][]edges;
-  String node;
-  boolean directed;
-  int [] subset;
+    int n;
+    int [][]edges;
+    String[] node;
+    boolean directed;
 
-// Constructor — runs when you make a new Graph object
-  public Graph(int n, boolean directed){
-    this.n =n;
-    this.directed= directed;
-    this.edges = new int[n][n];
-  }
-    
-    public void addNode(String node){
-      this.node = node;
+
+
+    public Graph(int n, boolean directed){
+        this.n =n;
+        this.directed= directed;
+        this.node= new String[n];
+        this.edges = new int[n][n];
     }
-   
-  
-  public void addEdge(int i, int j){
-    this.edges[i][j]=1;
-    if(!this.directed){
-      edges[j][i]=1;
-    }
-  }
-  void printGraph(){
-    for (int i=0; i<n; i++){
-      for (int j=0; j<n; j++){
-        this.edges[i][j]=0;
-      }
-      System.out.println();
-    }
-  }
-    Graph createSubGraph(Graph myGraph, int[]subset){
-      int m = subset.length;
-      Graph subsetGraph = new Graph(m, myGraph.directed);
-      for (int i=0; i<m; i++){
-        for(int j=0; j<m; j++){
-          subsetGraph.edges[i][j] = myGraph.edges [subset[i]subset[j]]
+    public void addEdge(int i, int j){
+        i--;
+        j--;
+        this.edges[i][j]=1;
+        if(!this.directed){
+            edges[j][i]=1;
         }
-      }
-      return subsetGraph;
     }
+    void printGraph() {
+        for (int i = 0; i < n; i++) {
+            System.out.print("Node " + i + ": ");
+            for (int j = 0; j < n; j++) {
+                if (edges[i][j] == 1) {
+                    System.out.print(j + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public Graph createSubGraph(Graph myGraph, int[]subset){
+        int m = subset.length;
+        Graph subsetGraph = new Graph(m, myGraph.directed);
+        for (int i=0; i<m; i++){
+            for(int j=0; j<m; j++){
+                subsetGraph.edges[i][j] = myGraph.edges[subset[i]][subset[j]];
+            }
+        }
+        return subsetGraph;
+    }
+
 }
