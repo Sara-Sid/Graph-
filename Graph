@@ -3,12 +3,14 @@ class Graph{
     int [][]edges;
     String[] node;
     boolean directed;
+    boolean weighted;
 
 
 
     public Graph(int n, boolean directed){
         this.n =n;
         this.directed= directed;
+        this.weighted= weighted;
         this.node= new String[n];
         this.edges = new int[n][n];
     }
