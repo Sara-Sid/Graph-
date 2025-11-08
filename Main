@@ -11,9 +11,14 @@ public static void main(String[] args) {
         myGraph.printGraph();
 
         System.out.println("/n");
+
         int[] subset = {1, 2, 4};
         Graph subGraph = myGraph.createSubGraph(myGraph, subset);
+
         System.out.println("Subgraph");
         subGraph.printGraph();
+
+        System.out.println("Vertices:");
+        myGraph.printVertices();
 
     }
