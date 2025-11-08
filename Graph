@@ -12,7 +12,7 @@ class Graph{
         this.node= new String[n];
         this.edges = new int[n][n];
     }
-    public add
+
     public void addEdge(int i, int j){
         i--;
         j--;
