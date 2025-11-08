@@ -1,0 +1,25 @@
+public class GraphTest {
+    public static void main(String[] args) {
+        // Undirected, weighted graph
+        Graph g1 = new Graph(5, false, true);
+        g1.addEdge(1, 2, 10);
+        g1.addEdge(2, 3, 20);
+        g1.addEdge(4, 5, 5);
+
+        System.out.println("Undirected Weighted Graph:");
+        g1.printVertices();
+        g1.printGraph();
+        
+
+
+        // Directed, unweighted graph
+        Graph g2 = new Graph(4, true, false);
+        g2.addEdge(1, 2);
+        g2.addEdge(2, 3);
+        g2.addEdge(3, 4);
+
+        System.out.println("\nDirected Unweighted Graph:");
+        g2.printGraph();
+
+    }
+}
