@@ -8,6 +8,7 @@ public class GraphTest {
 
         System.out.println("Undirected Weighted Graph:");
         g1.printVertices();
+        g1.removeEdge(2, 3);
         g1.printGraph();
         
 
